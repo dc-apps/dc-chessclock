@@ -1,5 +1,9 @@
+import { MainComponent } from './main.component';
+
 export const routes: Array<any> = [
-    //path: '', component: SomeComponent
+    {
+        path: '', component: MainComponent
+    }
 ];
 
 export const routeComponents: Array<any> = (function () {

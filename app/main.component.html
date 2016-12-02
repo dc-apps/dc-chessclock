@@ -1,0 +1,14 @@
+<DockLayout>
+    <DockLayout dock="top" width="100%">
+        <Button dock="left" width="50%" class="small" (tap)="startClock()" text="Start clock"></Button>
+        <Button dock="right" width="50%" class="small" dock="top" (tap)="switchSides()" text="Switch sides"></Button>
+    </DockLayout>
+    <DockLayout width="50%" [dock]="sides[0]">
+        <Label class="large" dock="top" [text]="getTime('white')[0]"></Label>
+        <Button dock="bottom" id="white" text="Tap" (tap)="tap(true)" [isEnabled]="whiteInterval"></Button>
+    </DockLayout>
+    <DockLayout width="50%" [dock]="sides[1]">
+        <Label class="large" dock="top" [text]="getTime('black')[0]"></Label>
+        <Button dock="bottom" id="black" text="Tap" (tap)="tap()" [isEnabled]="blackInterval"></Button>
+    </DockLayout>
+</DockLayout>

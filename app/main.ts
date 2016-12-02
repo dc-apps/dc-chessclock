@@ -7,12 +7,12 @@ import { routes, routeComponents } from './app.routing';
 
 @NgModule({
     declarations: [AppComponent, ...routeComponents],
-    entryComponents: [AppComponent, ...routeComponents],
+    //entryComponents: [AppComponent, ...routeComponents],
     bootstrap: [AppComponent],
     imports: [
-        NativeScriptModule//,
-        //NativeScriptRouterModule,
-        //NativeScriptRouterModule.forRoot(routes)
+        NativeScriptModule,
+        NativeScriptRouterModule,
+        NativeScriptRouterModule.forRoot(routes)
     ]
 })
 class AppComponentModule { }

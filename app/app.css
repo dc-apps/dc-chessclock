@@ -19,3 +19,23 @@ button {
     text-align: center;
     margin: 0 20;
 } 
+
+#white, #black {
+    width: 100%;
+}
+
+.small {
+    font-size: 18;
+}
+
+.large {
+    font-size: 72;
+}
+
+#white {
+    background-color: #eee;
+}
+
+#black {
+    background-color: #111;
+}
