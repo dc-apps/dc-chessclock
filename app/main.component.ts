@@ -16,8 +16,8 @@ export class MainComponent implements OnInit {
     public sides: Array<string>;
 
     constructor() {
-        this.matchSeconds = 300;
-        this.matchIncrement = 3;
+        this.matchSeconds = 900;
+        this.matchIncrement = 10;
         this.multiplier = 10;
 
         this.whiteTime = this.matchSeconds * this.multiplier;
