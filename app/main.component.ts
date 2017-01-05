@@ -13,6 +13,7 @@ export class MainComponent implements OnInit {
     private blackTime: number;
     private whiteInterval: any;
     private blackInterval: any;
+
     public sides: Array<string>;
 
     constructor() {
@@ -40,12 +41,39 @@ export class MainComponent implements OnInit {
     }
 
     public startClock() {
-        this.reset(true);
+        if (this.whiteInterval == 'pause') {
+            // start white timer
+            this.whiteInterval = setInterval(() => {
+                this.whiteTime--;
+            }, 1000 / this.multiplier);
+            return;
+        }
+
+        if (this.blackInterval == 'pause') {
+            // start black timer
+            this.blackInterval = setInterval(() => {
+                this.blackTime--;
+            }, 1000 / this.multiplier);
+            return;
+        }
+
+        this.reset();
 
         // start white timer
         this.whiteInterval = setInterval(() => {
             this.whiteTime--;
         }, 1000 / this.multiplier);
+    }
+
+    public pauseClock() {
+        if (this.whiteInterval) {
+            clearInterval(this.whiteInterval);
+            this.whiteInterval = 'pause';
+        }
+        if (this.blackInterval) {
+            clearInterval(this.blackInterval);
+            this.blackInterval = 'pause';
+        }
     }
 
     public switchSides() {
@@ -86,6 +114,18 @@ export class MainComponent implements OnInit {
             this.whiteInterval = setInterval(() => {
                 this.whiteTime--;
             }, 1000 / this.multiplier);
+        }
+    }
+    
+    get clockRunning() {
+        if((this.whiteInterval == 'pause') || this.blackInterval == 'pause') {
+            return false;
+        }
+        else if (this.whiteInterval || this.blackInterval) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
 
