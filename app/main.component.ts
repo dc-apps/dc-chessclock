@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import dialogs = require('ui/dialogs');
 
 @Component({
     templateUrl: 'main.component.html'
@@ -87,8 +88,25 @@ export class MainComponent implements OnInit {
         this.blackInterval = null;
 
         if (resetTime) {
-            this.whiteTime = this.matchSeconds * this.multiplier;
-            this.blackTime = this.matchSeconds * this.multiplier;
+            dialogs.action({
+                message: 'Choose time control',
+                cancelButtonText: 'Cancel',
+                actions: ['Rapid', 'Blitz']
+            }).then(result => {
+                if (result == 'Rapid') {
+                    this.matchSeconds = 900;
+                    this.matchIncrement = 10;
+                }
+                if (result == 'Blitz') {
+                    this.matchSeconds = 180;
+                    this.matchIncrement = 2;
+                }
+
+                this.whiteTime = this.matchSeconds * this.multiplier;
+                this.blackTime = this.matchSeconds * this.multiplier;
+            });
+
+
         }
     }
 
@@ -116,9 +134,9 @@ export class MainComponent implements OnInit {
             }, 1000 / this.multiplier);
         }
     }
-    
+
     get clockRunning() {
-        if((this.whiteInterval == 'pause') || this.blackInterval == 'pause') {
+        if ((this.whiteInterval == 'pause') || this.blackInterval == 'pause') {
             return false;
         }
         else if (this.whiteInterval || this.blackInterval) {
