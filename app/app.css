@@ -4,6 +4,11 @@ button, label, stack-layout {
     horizontal-align: center;    
 }
 
+/*#root {
+    padding: 10%;
+    background-color: darkred;
+}*/
+
 button {
     font-size: 36;
 }
@@ -28,9 +33,23 @@ button {
     font-size: 18;
 }
 
-.large {
-    font-size: 72;
+Label.left, Label.right {
+    background-color: rgb(155, 178, 155);
+    font-family: Courier New, Courier, monospace;
+    font-size: 54;
+    width: 100%;
+    text-align: center;
 }
+
+/*Label.left {
+    text-align: ce;
+    horizontal-align: left;
+}
+
+Label.right {
+    text-align: right;
+    horizontal-align: right;
+}*/
 
 #white {
     background-color: #eee;

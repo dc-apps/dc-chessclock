@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
     constructor() {
         this.matchSeconds = 900;
         this.matchIncrement = 10;
-        this.multiplier = 10;
+        this.multiplier = 100;
 
         this.whiteTime = this.matchSeconds * this.multiplier;
         this.blackTime = this.matchSeconds * this.multiplier;
@@ -28,10 +28,10 @@ export class MainComponent implements OnInit {
     }
 
     public getTime(color): Array<any> {
-        let totalSeconds = Math.ceil(this[color + 'Time'] / this.multiplier);
+        let totalSeconds = this[color + 'Time'] / this.multiplier;
 
         let minutes = Math.floor(totalSeconds / 60);
-        let seconds = totalSeconds - (minutes * 60);
+        let seconds = (totalSeconds - (minutes * 60)).toFixed((this.multiplier).toString().length -1); 
         let timeString = minutes + ':' + seconds;
 
         if (totalSeconds < 1) {

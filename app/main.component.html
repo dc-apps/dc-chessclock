@@ -1,4 +1,4 @@
-<DockLayout>
+<DockLayout id="root">
     <DockLayout dock="top" width="100%">
         <Button width="33%" dock="left" class="small" (tap)="reset(true)" text="Reset"></Button>
         <Button width="34%" *ngIf="!clockRunning" class="small" (tap)="startClock()" text="Start clock"></Button>
@@ -6,11 +6,11 @@
         <Button width="33%" dock="right" class="small" dock="top" (tap)="switchSides()" text="Switch sides"></Button>
     </DockLayout>
     <DockLayout width="50%" [dock]="sides[0]">
-        <Label class="large" dock="top" [text]="getTime('white')[0]"></Label>
+        <Label [class]="sides[0]" dock="top" [text]="getTime('white')[0]"></Label>
         <Button dock="bottom" id="white" text="Tap" (tap)="tap(true)" [isEnabled]="whiteInterval && clockRunning"></Button>
     </DockLayout>
     <DockLayout width="50%" [dock]="sides[1]">
-        <Label class="large" dock="top" [text]="getTime('black')[0]"></Label>
+        <Label [class]="sides[1]" dock="top" [text]="getTime('black')[0]"></Label>
         <Button dock="bottom" id="black" text="Tap" (tap)="tap()" [isEnabled]="blackInterval && clockRunning"></Button>
     </DockLayout>
 </DockLayout>
