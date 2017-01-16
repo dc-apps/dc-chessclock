@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import dialogs = require('ui/dialogs');
 
+let orientation = require('nativescript-orientation');
+
 @Component({
     templateUrl: 'main.component.html'
 })

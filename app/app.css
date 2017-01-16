@@ -4,6 +4,10 @@ button, label, stack-layout {
     horizontal-align: center;    
 }
 
+#bottom {
+
+}
+
 /*#root {
     padding: 10%;
     background-color: darkred;
@@ -36,9 +40,13 @@ button {
 Label.left, Label.right {
     background-color: rgb(155, 178, 155);
     font-family: Courier New, Courier, monospace;
-    font-size: 54;
+    font-size: 36;
     width: 100%;
     text-align: center;
+}
+
+.landscape Label.left, .landscape Label.right {
+    font-size: 54;
 }
 
 /*Label.left {
