@@ -6,13 +6,13 @@
         <Button width="33%" dock="right" class="small" dock="top" (tap)="switchSides()" text="Switch sides"></Button>
     </DockLayout>
     <DockLayout id="bottom" dock="bottom">
-        <DockLayout width="50%" [dock]="sides[0]">
+        <DockLayout width="50%" [dock]="sides[0]" [class]="(!whiteInterval || 'active') + ''">
             <Label [class]="sides[0]" dock="top" [text]="getTime('white')[0]"></Label>
-            <Button dock="bottom" id="white" text="Tap" (tap)="tap(true)" [isEnabled]="whiteInterval && clockRunning"></Button>
+            <Button dock="bottom" id="white" [class]="(!whiteInterval || 'active') + ''" (tap)="tap(true)" [isEnabled]="whiteInterval && clockRunning"></Button>
         </DockLayout>
-        <DockLayout width="50%" [dock]="sides[1]">
+        <DockLayout width="50%" [dock]="sides[1]" [class]="(!blackInterval || 'active') + ''">
             <Label [class]="sides[1]" dock="top" [text]="getTime('black')[0]"></Label>
-            <Button dock="bottom" id="black" text="Tap" (tap)="tap()" [isEnabled]="blackInterval && clockRunning"></Button>
+            <Button dock="bottom" id="black" [class]="(!blackInterval || 'active') + ''" (tap)="tap()" [isEnabled]="blackInterval && clockRunning"></Button>
         </DockLayout>
     </DockLayout>
 </DockLayout>
