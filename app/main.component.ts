@@ -22,7 +22,7 @@ export class MainComponent implements OnInit {
     constructor() {
         this.matchSeconds = 900;
         this.matchIncrement = 10;
-        this.multiplier = 100;
+        this.multiplier = 10;
 
         this.whiteTime = this.matchSeconds * this.multiplier;
         this.blackTime = this.matchSeconds * this.multiplier;
