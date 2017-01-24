@@ -4,10 +4,32 @@ button, label, stack-layout {
     horizontal-align: center;    
 }
 
+
 #root {
-    background-color: lightgray;
+    background-image: url("./flifsp.jpg");
+    background-repeat: no-repeat;
 }
 
+#portrait {
+    width: 100%;
+}
+
+#root > DockLayout {
+    opacity: 0;
+}
+
+#root > DockLayout#portrait {
+    opacity: 1;
+}
+
+.landscape #root > DockLayout {
+    opacity: 1;
+}
+
+.landscape #root > #portrait {
+    opacity: 0;
+    width: 0;
+}
 
 Button {
     font-size: 36;

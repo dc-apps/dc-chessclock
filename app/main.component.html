@@ -1,4 +1,8 @@
 <DockLayout id="root">
+    <DockLayout id="portrait" dock="left">
+        <Label text="Please turn device!"></Label>
+    </DockLayout>
+
     <DockLayout id="top" dock="top" width="100%">
         <Button width="33%" dock="left" class="small" (tap)="reset(true)" text="Reset"></Button>
         <Button width="34%" *ngIf="!clockRunning" class="small" (tap)="startClock()" text="Start clock"></Button>

@@ -5,6 +5,8 @@ import { AppComponent } from "./app.component";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { routes, routeComponents } from './app.routing';
 
+import { enableProdMode } from '@angular/core';
+
 @NgModule({
     declarations: [AppComponent, ...routeComponents],
     //entryComponents: [AppComponent, ...routeComponents],
@@ -16,5 +18,7 @@ import { routes, routeComponents } from './app.routing';
     ]
 })
 class AppComponentModule { }
+
+enableProdMode();
 
 platformNativeScriptDynamic().bootstrapModule(AppComponentModule);
