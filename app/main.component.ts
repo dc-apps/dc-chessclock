@@ -36,7 +36,7 @@ export class MainComponent implements OnInit {
         let seconds = (totalSeconds - (minutes * 60)).toFixed((this.multiplier).toString().length -1); 
         let timeString = minutes + ':' + seconds;
 
-        if (totalSeconds < 1) {
+        if (this[color + 'Time'] < 1) {
             this.timeout(color);
         }
 
