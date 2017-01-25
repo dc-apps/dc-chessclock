@@ -6,8 +6,13 @@ button, label, stack-layout {
 
 
 #root {
-    background-image: url("./flifsp.jpg");
+    font-family: "Calibre";
+    color: #31ed5d;
+    background-color: #31ed5d;
+    background-image: url("res://dc");
     background-repeat: no-repeat;
+    background-size:50%;
+    background-position: 55% 100%;
 }
 
 #portrait {
@@ -31,8 +36,24 @@ button, label, stack-layout {
     width: 0;
 }
 
-Button {
-    font-size: 36;
+#top {
+
+}
+
+#bottom {
+
+}
+
+.small {
+    background-color: white;
+    font-size: 24;
+    padding-top: 6;
+    height: 36;
+}
+
+.middle {
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 .title {
@@ -68,14 +89,12 @@ Button {
     z-index: 5;
 }
 
-.small {
-    font-size: 18;
-}
-
 Label.left, Label.right {
-    background-color: rgb(155, 178, 155);
+    background-color: #31ed5d;
+    color: black;
     font-family: "Digital-7";
     font-size: 36;
+    padding-top: 6;
     width: 100%;
     text-align: center;
 }
@@ -83,16 +102,6 @@ Label.left, Label.right {
 .landscape Label.left, .landscape Label.right {
     font-size: 54;
 }
-
-/*Label.left {
-    text-align: ce;
-    horizontal-align: left;
-}
-
-Label.right {
-    text-align: right;
-    horizontal-align: right;
-}*/
 
 #white {
     background-color: white;

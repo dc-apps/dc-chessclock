@@ -5,8 +5,8 @@
 
     <DockLayout id="top" dock="top" width="100%">
         <Button width="33%" dock="left" class="small" (tap)="reset(true)" text="Reset"></Button>
-        <Button width="34%" *ngIf="!clockRunning" class="small" (tap)="startClock()" text="Start clock"></Button>
-        <Button width="34%" *ngIf="clockRunning" class="small" (tap)="pauseClock()" text="Pause"></Button>
+        <Button width="34%" *ngIf="!clockRunning" class="small middle" (tap)="startClock()" text="Start clock"></Button>
+        <Button width="34%" *ngIf="clockRunning" class="small middle" (tap)="pauseClock()" text="Pause"></Button>
         <Button width="33%" dock="right" class="small" dock="top" (tap)="switchSides()" text="Switch sides"></Button>
     </DockLayout>
     <DockLayout id="bottom" dock="bottom">
